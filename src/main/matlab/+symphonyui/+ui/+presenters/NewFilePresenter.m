@@ -1,5 +1,8 @@
 classdef NewFilePresenter < appbox.Presenter
 
+% 21Feb2024 - SSP - Updated for UIView
+% TODO: showGetDirectory seems to be running twice 
+
     properties (Access = private)
         log
         options
@@ -15,7 +18,6 @@ classdef NewFilePresenter < appbox.Presenter
                 view = symphonyui.ui.views.NewFileView();
             end
             obj = obj@appbox.Presenter(view);
-            obj.view.setWindowStyle('modal');
 
             obj.log = log4m.LogManager.getLogger(class(obj));
             obj.options = options;
@@ -23,6 +25,8 @@ classdef NewFilePresenter < appbox.Presenter
             obj.enables = symphonyui.ui.util.trueStruct('name', 'location', 'browseLocation', 'selectDescription', ...
                 'ok', 'cancel');
             obj.documentationService = documentationService;
+
+            obj.go();
         end
 
     end
