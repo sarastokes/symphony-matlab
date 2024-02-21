@@ -26,7 +26,7 @@ function package(skipTests)
 
     % Set icon.
     icon = config.getElementsByTagName('param.icon').item(0);
-    icon.setTextContent(fullfile('${PROJECT_ROOT}', 'src', 'main', 'resources', 'icons', 'app_24.png'));
+    icon.setTextContent(fullfile('${PROJECT_ROOT}', 'src', 'main', 'resource', 'icons', 'app_24.png'));
     icons = config.getElementsByTagName('param.icons').item(0);
     files = icons.getElementsByTagName('file');
     while files.getLength() > 0
@@ -35,9 +35,9 @@ function package(skipTests)
     icon16 = icons.getOwnerDocument().createElement('file');
     icon24 = icons.getOwnerDocument().createElement('file');
     icon48 = icons.getOwnerDocument().createElement('file');
-    icon16.setTextContent(fullfile('${PROJECT_ROOT}', 'src', 'main', 'resources', 'icons', 'app_16.png'));
-    icon24.setTextContent(fullfile('${PROJECT_ROOT}', 'src', 'main', 'resources', 'icons', 'app_24.png'));
-    icon48.setTextContent(fullfile('${PROJECT_ROOT}', 'src', 'main', 'resources', 'icons', 'app_48.png'));
+    icon16.setTextContent(fullfile('${PROJECT_ROOT}', 'src', 'main', 'resource', 'icons', 'app_16.png'));
+    icon24.setTextContent(fullfile('${PROJECT_ROOT}', 'src', 'main', 'resource', 'icons', 'app_24.png'));
+    icon48.setTextContent(fullfile('${PROJECT_ROOT}', 'src', 'main', 'resource', 'icons', 'app_48.png'));
     icons.appendChild(icon16);
     icons.appendChild(icon24);
     icons.appendChild(icon48);
